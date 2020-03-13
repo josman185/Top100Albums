@@ -13,8 +13,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("ViewController")
+        view.backgroundColor = .green
+        NetworkingManager.shared.fetchAlbums { (result:Result<[Album], NetworkingManager.APIServiceError>) in
+            switch result {
+            case .success(let feed):
+                print(String("\(feed)"))
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
-
-
 }
 
