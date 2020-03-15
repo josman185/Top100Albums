@@ -19,13 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let navController = UINavigationController(rootViewController: ViewController())
+        //let AlbumsViewController = AlbumsTableVC()
+        let navController = UINavigationController(rootViewController: AlbumsTableVC())
         navController.navigationBar.prefersLargeTitles = true
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        //navController.viewControllers = [AlbumsViewController]
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

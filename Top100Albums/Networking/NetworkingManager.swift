@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkingManager: NSObject {
     
@@ -44,22 +45,5 @@ class NetworkingManager: NSObject {
     public func fetchAlbums(result: @escaping (Result<[Album], APIServiceError>) -> Void) {
         guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/explicit.json") else { return }
         fetchResources(url: url, completion: result)
-    }
-}
-
-extension URLSession {
-    func dataTask(with url: URL, result: @escaping (Result<(URLResponse, Data), Error>) -> Void) -> URLSessionDataTask {
-    return dataTask(with: url) { (data, response, error) in
-        if let error = error {
-            result(.failure(error))
-            return
-        }
-        guard let response = response, let data = data else {
-            let error = NSError(domain: "error", code: 0, userInfo: nil)
-            result(.failure(error))
-            return
-        }
-            result(.success((response, data)))
-        }
     }
 }
