@@ -10,19 +10,14 @@ import UIKit
 
 class AlbumDetailVC: UIViewController {
     
-    var detailView: AlbumDetail { return self.view as! AlbumDetail }
+    var detailView: AlbumDetail { return view as! AlbumDetail }
     var album: Album?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(detailView)
-        view.backgroundColor = .green
-    }
-    
-    override func loadView() {
         self.view = AlbumDetail(frame: UIScreen.main.bounds)
+        detailView.set(detail: album!)
     }
-    
 
     /*
     // MARK: - Navigation
