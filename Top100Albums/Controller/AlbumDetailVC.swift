@@ -15,6 +15,7 @@ class AlbumDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = album?.artistName
         self.view = AlbumDetail(frame: UIScreen.main.bounds)
         detailView.set(detail: album!)
     }
