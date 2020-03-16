@@ -12,12 +12,16 @@ class AlbumDetailVC: UIViewController {
     
     var detailView: AlbumDetail { return view as! AlbumDetail }
     var album: Album?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = album?.artistName
         self.view = AlbumDetail(frame: UIScreen.main.bounds)
         detailView.set(detail: album!)
+        detailView.iTunesButtonAction = { [weak self] in
+            print("Button tapped")
+            guard let _ = self else { return }
+        }
     }
 
     /*

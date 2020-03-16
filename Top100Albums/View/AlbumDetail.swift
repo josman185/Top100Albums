@@ -10,10 +10,13 @@ import UIKit
 
 class AlbumDetail: UIView {
     
+    var iTunesButtonAction: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setSubViews()
         self.setConstraints()
+        addiTunesButtonAction()
     }
     
     let albumImage: UIImageView = {
@@ -67,7 +70,7 @@ class AlbumDetail: UIView {
     }()
     
     let itunesButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("iTunes Preview", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .medium)
@@ -84,6 +87,14 @@ class AlbumDetail: UIView {
         artistLabel.text = detail.artistName
         genreLabel.text = detail.genres.first?.name
         releaseDateLabel.text = detail.releaseDate
+    }
+    
+    func addiTunesButtonAction() {
+        itunesButton.addTarget(self, action: #selector(buttonitunesPressed), for: .touchUpInside)
+    }
+    
+    @objc func buttonitunesPressed() {
+        iTunesButtonAction?()
     }
     
     func setSubViews() {
