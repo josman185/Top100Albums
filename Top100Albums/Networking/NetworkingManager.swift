@@ -25,25 +25,26 @@ class NetworkingManager: NSObject {
     private func fetchResources(url: URL, completion: @escaping (Result<[Album], APIServiceError>) -> Void) {
         urlSession.dataTask(with: url) { (result) in
            switch result {
-               case .success(let (response, data)):
-                   guard let statusCode = (response as? HTTPURLResponse)?.statusCode, 200..<299 ~= statusCode else {
-                       completion(.failure(.invalidResponse))
-                       return
-                   }
-                   do {
-                        let values = try JSONDecoder().decode(Feedjson.self, from: data).feed.results
-                        completion(.success(values))
-                   } catch {
-                        completion(.failure(.decodeError))
-                   }
-               case .failure:
+           case .success(let (response, data)):
+                guard let statusCode = (response as? HTTPURLResponse)?.statusCode, 200..<299 ~= statusCode else {
+                    completion(.failure(.invalidResponse))
+                    return
+                }
+                do {
+                    let values = try JSONDecoder().decode(Feedjson.self, from: data).feed.results
+                    completion(.success(values))
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+           case .failure:
                    completion(.failure(.apiError))
                }
         }.resume()
     }
     
     public func fetchAlbums(result: @escaping (Result<[Album], APIServiceError>) -> Void) {
-        guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/explicit.json") else { return }
+        let stringURL = "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/explicit.json"
+        guard let url = URL(string: stringURL) else { return }
         fetchResources(url: url, completion: result)
     }
 }

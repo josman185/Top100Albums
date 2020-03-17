@@ -39,7 +39,7 @@ class AlbumsTableViewController: UIViewController {
     }
     
     func fetchAlbums() {
-        NetworkingManager.shared.fetchAlbums { (result:Result<[Album], NetworkingManager.APIServiceError>) in
+        NetworkingManager.shared.fetchAlbums { (result: Result<[Album], NetworkingManager.APIServiceError>) in
             switch result {
             case .success(let feed):
                 self.albums = feed
@@ -72,5 +72,4 @@ extension AlbumsTableViewController: UITableViewDelegate, UITableViewDataSource 
         detailVC.album = album
         navigationController?.pushViewController(detailVC, animated: true)
     }
-    
 }

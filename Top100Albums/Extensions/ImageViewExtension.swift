@@ -13,10 +13,12 @@ extension UIImageView {
     
     func setCustomImage(_ imgURLString: String?) {
         if let imageURLString = imgURLString {
-            
             guard let url = URL(string: imageURLString) else { return }
-            
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
+                guard error == nil else {
+                    print(error?.localizedDescription ?? "image donwload error")
+                    return
+                }
                 guard let data = data else { return }
                 DispatchQueue.main.async {
                     self.image = UIImage(data: data)
@@ -27,5 +29,4 @@ extension UIImageView {
             self.image = UIImage(named: "Apple")
         }
     }
-    
 }
