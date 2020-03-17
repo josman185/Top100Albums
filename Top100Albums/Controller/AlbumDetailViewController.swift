@@ -22,7 +22,7 @@ class AlbumDetailViewController: UIViewController {
     func setAlbumDetail() {
         self.title = album?.artistName
         self.view = AlbumDetail(frame: UIScreen.main.bounds)
-        detailView.set(detail: album!)
+        detailView.set(detail: album)
     }
     
     func iTunesButtonAction() {

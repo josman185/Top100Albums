@@ -80,13 +80,13 @@ class AlbumDetail: UIView {
         return button
     }()
     
-    func set(detail: Album) {
-        albumImage.setCustomImage(detail.artworkUrl100)
-        copyrightLabel.text = detail.copyright
-        albumLabel.text = detail.name
-        artistLabel.text = detail.artistName
-        genreLabel.text = detail.genres.first?.name
-        releaseDateLabel.text = detail.releaseDate
+    func set(detail: Album?) {
+        albumImage.setCustomImage(detail?.artworkUrl100)
+        copyrightLabel.text = detail?.copyright
+        albumLabel.text = detail?.name
+        artistLabel.text = detail?.artistName
+        genreLabel.text = detail?.genres.first?.name
+        releaseDateLabel.text = detail?.releaseDate
     }
     
     func addiTunesButtonAction() {
