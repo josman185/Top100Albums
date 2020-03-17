@@ -31,7 +31,7 @@ class AlbumDetailViewController: UIViewController {
     // MARK: - Actions
     func iTunesButtonAction() {
         #if targetEnvironment(simulator)
-            self.showAlert(titleStr: "We Apologize", messageStr: "Use a device to enjoy all features.", style: .cancel)
+            self.showAlert(title: "We Apologize", message: "Use a device to enjoy all features.", style: .cancel)
         #else
             detailView?.iTunesButtonAction = { [weak self] in
                 guard let albumUrl = self?.album?.url else { return }
