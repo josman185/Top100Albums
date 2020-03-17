@@ -1,5 +1,5 @@
 //
-//  UIColor_Ext.swift
+//  ColorExtension.swift
 //  Top100Albums
 //
 //  Created by Jose Vargas on 15/03/20.

@@ -1,5 +1,5 @@
 //
-//  UIView_Ext.swift
+//  ViewExtension.swift
 //  Top100Albums
 //
 //  Created by Jose Vargas on 13/03/20.

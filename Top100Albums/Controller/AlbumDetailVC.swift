@@ -1,5 +1,5 @@
 //
-//  AlbumDetailVC.swift
+//  AlbumDetailViewController.swift
 //  Top100Albums
 //
 //  Created by Jose Vargas on 14/03/20.
@@ -8,30 +8,32 @@
 
 import UIKit
 
-class AlbumDetailVC: UIViewController {
+class AlbumDetailViewController: UIViewController {
     
     var detailView: AlbumDetail { return view as! AlbumDetail }
     var album: Album?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAlbumDetail()
+        iTunesButtonAction()
+    }
+    
+    func setAlbumDetail() {
         self.title = album?.artistName
         self.view = AlbumDetail(frame: UIScreen.main.bounds)
         detailView.set(detail: album!)
+    }
+    
+    func iTunesButtonAction() {
         detailView.iTunesButtonAction = { [weak self] in
-            print("Button tapped")
-            guard let _ = self else { return }
+            
+            guard let albumUrl = self?.album?.url else { return }
+            
+            if let url = URL(string: albumUrl) {
+                UIApplication.shared.open(url)
+            }
+
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

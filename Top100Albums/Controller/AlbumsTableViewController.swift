@@ -1,5 +1,5 @@
 //
-//  AlbumsTableVC.swift
+//  AlbumsTableViewController.swift
 //  Top100Albums
 //
 //  Created by Jose Vargas on 13/03/20.
@@ -12,7 +12,7 @@ struct AlbumsConstants {
     static let albumCell = "albumCell"
 }
 
-class AlbumsTableVC: UIViewController {
+class AlbumsTableViewController: UIViewController {
     
     var albumsTableView = UITableView()
     var albums: [Album] = []
@@ -54,13 +54,13 @@ class AlbumsTableVC: UIViewController {
     }
 }
 
-extension AlbumsTableVC: UITableViewDelegate, UITableViewDataSource {
+extension AlbumsTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         albums.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsConstants.albumCell) as! AlbumCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsConstants.albumCell) as? AlbumCell else { return UITableViewCell() }
         let album = albums[indexPath.row]
         cell.set(album: album)
         return cell
@@ -68,7 +68,7 @@ extension AlbumsTableVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let album = self.albums[indexPath.row]
-        let detailVC = AlbumDetailVC()
+        let detailVC = AlbumDetailViewController()
         detailVC.album = album
         navigationController?.pushViewController(detailVC, animated: true)
     }
