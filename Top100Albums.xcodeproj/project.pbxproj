@@ -24,6 +24,7 @@
 		9C54D794241D28FB0022907B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54D793241D28FB0022907B /* ActivityIndicator.swift */; };
 		9C54D798241D5FB30022907B /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54D797241D5FB30022907B /* ImageViewExtension.swift */; };
 		9C54D79A241D66800022907B /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54D799241D66800022907B /* URLSessionExtension.swift */; };
+		9C5B557824216EAD0094A4DB /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B557724216EAD0094A4DB /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		9C54D793241D28FB0022907B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9C54D797241D5FB30022907B /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		9C54D799241D66800022907B /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
+		9C5B557724216EAD0094A4DB /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				9C54D797241D5FB30022907B /* ImageViewExtension.swift */,
 				9C54D799241D66800022907B /* URLSessionExtension.swift */,
 				9C5190A1241EAC88008DB766 /* ColorExtension.swift */,
+				9C5B557724216EAD0094A4DB /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			files = (
 				9C54D754241C1B590022907B /* AppDelegate.swift in Sources */,
 				9C54D756241C1B590022907B /* SceneDelegate.swift in Sources */,
+				9C5B557824216EAD0094A4DB /* UIViewControllerExtension.swift in Sources */,
 				9C54D78C241C2BD30022907B /* AlbumsTableViewController.swift in Sources */,
 				9C54D789241C21310022907B /* NetworkingManager.swift in Sources */,
 				9C54D794241D28FB0022907B /* ActivityIndicator.swift in Sources */,

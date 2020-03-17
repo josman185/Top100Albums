@@ -120,6 +120,7 @@ class AlbumDetail: UIView {
     
     func setAlbumImageViewConstrainst() {
         albumImage.translatesAutoresizingMaskIntoConstraints = false
+        albumImage.contentMode = .scaleAspectFit
         albumImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
         albumImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
         albumImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
@@ -137,7 +138,7 @@ class AlbumDetail: UIView {
         albumLabel.translatesAutoresizingMaskIntoConstraints = false
         albumLabel.leftAnchor.constraint(equalTo: albumImage.leftAnchor, constant: 5).isActive = true
         albumLabel.rightAnchor.constraint(equalTo: albumImage.rightAnchor, constant: 0).isActive = true
-        albumLabel.topAnchor.constraint(equalTo: copyrightLabel.bottomAnchor, constant: 50).isActive = true
+        albumLabel.topAnchor.constraint(equalTo: copyrightLabel.bottomAnchor, constant: 40).isActive = true
     }
     
     func setArtistLabelConstraints() {

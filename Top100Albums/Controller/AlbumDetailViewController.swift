@@ -12,6 +12,7 @@ class AlbumDetailViewController: UIViewController {
 
     var detailView: AlbumDetail? { return view as? AlbumDetail }
     var album: Album?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setAlbumDetail()
@@ -25,12 +26,15 @@ class AlbumDetailViewController: UIViewController {
     }
     
     func iTunesButtonAction() {
-        detailView?.iTunesButtonAction = { [weak self] in
-            guard let albumUrl = self?.album?.url else { return }
-            
-            if let url = URL(string: albumUrl) {
-                UIApplication.shared.open(url)
+        #if targetEnvironment(simulator)
+            self.showAlert(titleStr: "We Apologize", messageStr: "Use a device to enjoy all features.", style: .cancel)
+        #else
+            detailView?.iTunesButtonAction = { [weak self] in
+                guard let albumUrl = self?.album?.url else { return }
+                if let url = URL(string: albumUrl) {
+                    UIApplication.shared.open(url)
+                }
             }
-        }
+        #endif
     }
 }
