@@ -11,6 +11,7 @@ import UIKit
 
 class NetworkingManager: NSObject {
     
+    // MARK: - Properties
     public static let shared = NetworkingManager()
     let urlSession = URLSession.shared
     
@@ -22,6 +23,7 @@ class NetworkingManager: NSObject {
         case decodeError
     }
     
+    // MARK: - APIrequest
     private func fetchResources(url: URL, completion: @escaping (Result<[Album], APIServiceError>) -> Void) {
         urlSession.dataTask(with: url) { (result) in
            switch result {
