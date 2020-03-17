@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C4C04DB24205E0D004904B0 /* AlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C04DA24205E0D004904B0 /* AlbumDetailVC.swift */; };
+		9C4C04DB24205E0D004904B0 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C04DA24205E0D004904B0 /* AlbumDetailViewController.swift */; };
 		9C4CA59A241DA7540011B8DD /* AlbumDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CA599241DA7540011B8DD /* AlbumDetail.swift */; };
 		9C5190A2241EAC88008DB766 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5190A1241EAC88008DB766 /* ColorExtension.swift */; };
 		9C54D754241C1B590022907B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54D753241C1B590022907B /* AppDelegate.swift */; };
@@ -44,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9C4C04DA24205E0D004904B0 /* AlbumDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailVC.swift; sourceTree = "<group>"; };
+		9C4C04DA24205E0D004904B0 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		9C4CA599241DA7540011B8DD /* AlbumDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetail.swift; sourceTree = "<group>"; };
 		9C5190A1241EAC88008DB766 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9C54D750241C1B590022907B /* Top100Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Top100Albums.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,7 +168,7 @@
 		9C54D78A241C2B890022907B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9C4C04DA24205E0D004904B0 /* AlbumDetailVC.swift */,
+				9C4C04DA24205E0D004904B0 /* AlbumDetailViewController.swift */,
 				9C54D78B241C2BD30022907B /* AlbumsTableViewController.swift */,
 			);
 			path = Controller;
@@ -332,7 +332,7 @@
 				9C54D794241D28FB0022907B /* ActivityIndicator.swift in Sources */,
 				9C54D792241C31780022907B /* ViewExtension.swift in Sources */,
 				9C54D79A241D66800022907B /* URLSessionExtension.swift in Sources */,
-				9C4C04DB24205E0D004904B0 /* AlbumDetailVC.swift in Sources */,
+				9C4C04DB24205E0D004904B0 /* AlbumDetailViewController.swift in Sources */,
 				9C4CA59A241DA7540011B8DD /* AlbumDetail.swift in Sources */,
 				9C5190A2241EAC88008DB766 /* ColorExtension.swift in Sources */,
 				9C54D785241C20B20022907B /* Album.swift in Sources */,
