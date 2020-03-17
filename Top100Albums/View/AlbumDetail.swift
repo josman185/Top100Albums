@@ -10,14 +10,8 @@ import UIKit
 
 class AlbumDetail: UIView {
     
+    // MARK: - Properties
     var iTunesButtonAction: (() -> Void)?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setSubViews()
-        self.setConstraints()
-        addiTunesButtonAction()
-    }
     
     let albumImage: UIImageView = {
         let imageView = UIImageView()
@@ -80,6 +74,18 @@ class AlbumDetail: UIView {
         return button
     }()
     
+    // MARK: - Init Methods
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setSubViews()
+        self.setConstraints()
+        addiTunesButtonAction()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func set(detail: Album?) {
         albumImage.setCustomImage(detail?.artworkUrl100)
         copyrightLabel.text = detail?.copyright
@@ -89,14 +95,7 @@ class AlbumDetail: UIView {
         releaseDateLabel.text = detail?.releaseDate
     }
     
-    func addiTunesButtonAction() {
-        itunesButton.addTarget(self, action: #selector(buttonitunesPressed), for: .touchUpInside)
-    }
-    
-    @objc func buttonitunesPressed() {
-        iTunesButtonAction?()
-    }
-    
+    // MARK: - setUI
     func setSubViews() {
         self.backgroundColor = .white
         self.addSubview(albumImage)
@@ -118,6 +117,7 @@ class AlbumDetail: UIView {
         self.setiTunesButtonConstraints()
     }
     
+    // MARK: - Constraints
     func setAlbumImageViewConstrainst() {
         albumImage.translatesAutoresizingMaskIntoConstraints = false
         albumImage.contentMode = .scaleAspectFit
@@ -171,7 +171,12 @@ class AlbumDetail: UIView {
         itunesButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    // MARK: - Actions
+    func addiTunesButtonAction() {
+        itunesButton.addTarget(self, action: #selector(buttonitunesPressed), for: .touchUpInside)
+    }
+    
+    @objc func buttonitunesPressed() {
+        iTunesButtonAction?()
     }
 }

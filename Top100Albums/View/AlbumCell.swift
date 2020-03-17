@@ -58,7 +58,6 @@ class AlbumCell: UITableViewCell {
     }
     
     // MARK: - Constraints
-    
     func setThumbImageConstraints() {
         thumbImage.translatesAutoresizingMaskIntoConstraints = false
         thumbImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
