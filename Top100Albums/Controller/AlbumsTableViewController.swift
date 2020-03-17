@@ -14,9 +14,11 @@ struct AlbumsConstants {
 
 class AlbumsTableViewController: UIViewController {
     
+    // MARK: - Properties
     var albumsTableView = UITableView()
     var albums: [Album] = []
-
+    
+    // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Top Albums"
@@ -25,6 +27,7 @@ class AlbumsTableViewController: UIViewController {
         fetchAlbums()
     }
     
+    // MARK: - TableViewConfig
     func configureTableView() {
         view.addSubview(albumsTableView)
         setTableViewDelegates()
@@ -38,6 +41,7 @@ class AlbumsTableViewController: UIViewController {
         albumsTableView.dataSource = self
     }
     
+    // MARK: - Actions
     func fetchAlbums() {
         NetworkingManager.shared.fetchAlbums { (result: Result<[Album], NetworkingManager.APIServiceError>) in
             switch result {
@@ -54,7 +58,9 @@ class AlbumsTableViewController: UIViewController {
     }
 }
 
+// MARK: - TableViewDelegate
 extension AlbumsTableViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         albums.count
     }
