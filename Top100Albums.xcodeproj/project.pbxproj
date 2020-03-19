@@ -10,6 +10,7 @@
 		9C4C04DB24205E0D004904B0 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C04DA24205E0D004904B0 /* AlbumDetailViewController.swift */; };
 		9C4CA59A241DA7540011B8DD /* AlbumDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CA599241DA7540011B8DD /* AlbumDetail.swift */; };
 		9C5190A2241EAC88008DB766 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5190A1241EAC88008DB766 /* ColorExtension.swift */; };
+		9C520ABD242300D80028E645 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C520ABC242300D80028E645 /* Constants.swift */; };
 		9C54D754241C1B590022907B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54D753241C1B590022907B /* AppDelegate.swift */; };
 		9C54D756241C1B590022907B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54D755241C1B590022907B /* SceneDelegate.swift */; };
 		9C54D75D241C1B620022907B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C54D75C241C1B620022907B /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		9C4C04DA24205E0D004904B0 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		9C4CA599241DA7540011B8DD /* AlbumDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetail.swift; sourceTree = "<group>"; };
 		9C5190A1241EAC88008DB766 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		9C520ABC242300D80028E645 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9C54D750241C1B590022907B /* Top100Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Top100Albums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C54D753241C1B590022907B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C54D755241C1B590022907B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C520ABB242300BE0028E645 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9C520ABC242300D80028E645 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		9C54D747241C1B580022907B = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		9C54D752241C1B590022907B /* Top100Albums */ = {
 			isa = PBXGroup;
 			children = (
+				9C520ABB242300BE0028E645 /* Constants */,
 				9C54D783241C20950022907B /* Model */,
 				9C54D78D241C2C460022907B /* View */,
 				9C54D78A241C2B890022907B /* Controller */,
@@ -333,6 +344,7 @@
 				9C5B557824216EAD0094A4DB /* UIViewControllerExtension.swift in Sources */,
 				9C54D78C241C2BD30022907B /* AlbumsTableViewController.swift in Sources */,
 				9C54D789241C21310022907B /* NetworkingManager.swift in Sources */,
+				9C520ABD242300D80028E645 /* Constants.swift in Sources */,
 				9C54D794241D28FB0022907B /* ActivityIndicator.swift in Sources */,
 				9C54D792241C31780022907B /* ViewExtension.swift in Sources */,
 				9C54D79A241D66800022907B /* URLSessionExtension.swift in Sources */,

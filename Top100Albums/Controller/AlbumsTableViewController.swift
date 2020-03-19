@@ -8,11 +8,11 @@
 
 import UIKit
 
-struct AlbumsConstants {
-    static let albumCell = "albumCell"
-}
-
 class AlbumsTableViewController: UIViewController {
+    
+    struct AlbumsConstants {
+        static let albumCell = "albumCell"
+    }
     
     // MARK: - Properties
     var albumsTableView = UITableView()
@@ -23,7 +23,6 @@ class AlbumsTableViewController: UIViewController {
         super.viewDidLoad()
         title = "Top Albums"
         configureTableView()
-        CustomActivityIndicator.start()
         fetchAlbums()
     }
     
@@ -43,6 +42,7 @@ class AlbumsTableViewController: UIViewController {
     
     // MARK: - Actions
     func fetchAlbums() {
+        CustomActivityIndicator.start()
         NetworkingManager.shared.fetchAlbums { (result: Result<[Album], NetworkingManager.APIServiceError>) in
             switch result {
             case .success(let feed):
@@ -53,8 +53,15 @@ class AlbumsTableViewController: UIViewController {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                CustomActivityIndicator.stop()
             }
         }
+    }
+    
+    func showAlbumDetailView(_ album: Album) {
+        let detailVC = AlbumDetailViewController()
+        detailVC.album = album
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
@@ -67,15 +74,12 @@ extension AlbumsTableViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsConstants.albumCell) as? AlbumCell else { return UITableViewCell() }
-        let album = albums[indexPath.row]
-        cell.set(album: album)
+        cell.album = albums[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let album = self.albums[indexPath.row]
-        let detailVC = AlbumDetailViewController()
-        detailVC.album = album
-        navigationController?.pushViewController(detailVC, animated: true)
+        showAlbumDetailView(album)
     }
 }

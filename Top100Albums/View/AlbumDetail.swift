@@ -96,7 +96,7 @@ class AlbumDetail: UIView {
     }
     
     // MARK: - setUI
-    func setSubViews() {
+    fileprivate func setSubViews() {
         self.backgroundColor = .white
         self.addSubview(albumImage)
         self.addSubview(copyrightLabel)
@@ -107,7 +107,7 @@ class AlbumDetail: UIView {
         self.addSubview(itunesButton)
     }
     
-    func setConstraints() {
+    fileprivate func setConstraints() {
         self.setAlbumImageViewConstrainst()
         self.setCopyrightLabelConstraints()
         self.setAlbumLabelConstraints()
@@ -118,7 +118,7 @@ class AlbumDetail: UIView {
     }
     
     // MARK: - Constraints
-    func setAlbumImageViewConstrainst() {
+    fileprivate func setAlbumImageViewConstrainst() {
         albumImage.translatesAutoresizingMaskIntoConstraints = false
         albumImage.contentMode = .scaleAspectFit
         albumImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
@@ -127,42 +127,42 @@ class AlbumDetail: UIView {
         albumImage.bottomAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
     }
     
-    func setCopyrightLabelConstraints() {
+    fileprivate func setCopyrightLabelConstraints() {
         copyrightLabel.translatesAutoresizingMaskIntoConstraints = false
         copyrightLabel.leftAnchor.constraint(equalTo: self.albumImage.leftAnchor, constant: 0).isActive = true
         copyrightLabel.rightAnchor.constraint(equalTo: self.albumImage.rightAnchor, constant: 0).isActive = true
         copyrightLabel.topAnchor.constraint(equalTo: self.albumImage.bottomAnchor, constant: 10).isActive = true
     }
     
-    func setAlbumLabelConstraints() {
+    fileprivate func setAlbumLabelConstraints() {
         albumLabel.translatesAutoresizingMaskIntoConstraints = false
         albumLabel.leftAnchor.constraint(equalTo: albumImage.leftAnchor, constant: 5).isActive = true
         albumLabel.rightAnchor.constraint(equalTo: albumImage.rightAnchor, constant: 0).isActive = true
         albumLabel.topAnchor.constraint(equalTo: copyrightLabel.bottomAnchor, constant: 40).isActive = true
     }
     
-    func setArtistLabelConstraints() {
+    fileprivate func setArtistLabelConstraints() {
         artistLabel.translatesAutoresizingMaskIntoConstraints = false
         artistLabel.leftAnchor.constraint(equalTo: albumImage.leftAnchor, constant: 5).isActive = true
         artistLabel.rightAnchor.constraint(equalTo: albumImage.rightAnchor, constant: -5).isActive = true
         artistLabel.topAnchor.constraint(equalTo: albumLabel.bottomAnchor, constant: 0).isActive = true
     }
     
-    func setGenderLabelConstraints() {
+    fileprivate func setGenderLabelConstraints() {
         genreLabel.translatesAutoresizingMaskIntoConstraints = false
         genreLabel.leftAnchor.constraint(equalTo: self.albumImage.leftAnchor, constant: 5).isActive = true
         genreLabel.rightAnchor.constraint(equalTo: self.albumImage.rightAnchor, constant: -5).isActive = true
         genreLabel.topAnchor.constraint(equalTo: self.artistLabel.bottomAnchor, constant: 5).isActive = true
     }
     
-    func setReleaseDateLabelConstraints() {
+    fileprivate func setReleaseDateLabelConstraints() {
         releaseDateLabel.translatesAutoresizingMaskIntoConstraints = false
         releaseDateLabel.leftAnchor.constraint(equalTo: self.albumImage.leftAnchor, constant: 5).isActive = true
         releaseDateLabel.rightAnchor.constraint(equalTo: self.albumImage.rightAnchor, constant: -5).isActive = true
         releaseDateLabel.topAnchor.constraint(equalTo: genreLabel.bottomAnchor, constant: 5).isActive = true
     }
     
-    func setiTunesButtonConstraints() {
+    fileprivate func setiTunesButtonConstraints() {
         itunesButton.translatesAutoresizingMaskIntoConstraints = false
         itunesButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
         itunesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true

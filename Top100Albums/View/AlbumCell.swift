@@ -14,6 +14,13 @@ class AlbumCell: UITableViewCell {
     var albumLabel = UILabel()
     var artistLabel = UILabel()
     var thumbImage = UIImageView()
+    var album: Album? {
+        didSet {
+            thumbImage.setCustomImage(album?.artworkUrl100)
+            albumLabel.text = album?.name
+            artistLabel.text = album?.artistName
+        }
+    }
     
     // MARK: - InitMethods
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -27,12 +34,6 @@ class AlbumCell: UITableViewCell {
         setThumbImageConstraints()
         setAlbumLabelConstraits()
         setArtisLabelConstarint()
-    }
-    
-    func set(album: Album) {
-        thumbImage.setCustomImage(album.artworkUrl100)
-        albumLabel.text = album.name
-        artistLabel.text = album.artistName
     }
     
     required init?(coder: NSCoder) {

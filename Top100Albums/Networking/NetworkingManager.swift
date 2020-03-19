@@ -45,7 +45,7 @@ class NetworkingManager: NSObject {
     }
     
     public func fetchAlbums(result: @escaping (Result<[Album], APIServiceError>) -> Void) {
-        let stringURL = "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/explicit.json"
+        let stringURL = UrlConstants.iTunesURL
         guard let url = URL(string: stringURL) else { return }
         fetchResources(url: url, completion: result)
     }
