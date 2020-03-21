@@ -26,14 +26,18 @@ open class CustomActivityIndicator {
             spinner.backgroundColor = backGroundColor
             spinner.color = spinerColor
             window.addSubview(spinner)
-            spinner.startAnimating()
+            DispatchQueue.main.async {
+                spinner.startAnimating()
+            }
         }
     }
     
     public static func stop() {
-        if spinner.isAnimating {
-            spinner.stopAnimating()
-            spinner.removeFromSuperview()
+        DispatchQueue.main.async {
+            if spinner.isAnimating {
+                spinner.stopAnimating()
+                spinner.removeFromSuperview()
+            }
         }
     }
 }

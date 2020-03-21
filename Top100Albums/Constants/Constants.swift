@@ -9,5 +9,5 @@
 import Foundation
 
 struct UrlConstants {
-    static let iTunesURL = "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/explicit.json"
+    static let iTunesURL = "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/100/explicit.json"
 }

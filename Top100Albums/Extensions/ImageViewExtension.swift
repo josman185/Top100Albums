@@ -11,20 +11,18 @@ import UIKit
 
 extension UIImageView {
     
-    func setCustomImage(_ imgURLString: String?) {
-        if let imageURLString = imgURLString {
-            guard let url = URL(string: imageURLString) else { return }
-            let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
-                guard error == nil else {
-                    print(error?.localizedDescription ?? "image donwload error")
-                    return
-                }
-                guard let data = data else { return }
-                DispatchQueue.main.async {
-                    self.image = UIImage(data: data)
+    func loadImage(_ url: String?) {
+        if let url = url {
+            guard let url = URL(string: url) else { return }
+            DispatchQueue.global().async { [weak self] in
+                if let imgData = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: imgData) {
+                        DispatchQueue.main.async {
+                            self?.image = image
+                        }
+                    }
                 }
             }
-            task.resume()
         } else {
             self.image = UIImage(named: "Apple")
         }

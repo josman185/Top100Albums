@@ -16,7 +16,7 @@ class AlbumCell: UITableViewCell {
     var thumbImage = UIImageView()
     var album: Album? {
         didSet {
-            thumbImage.setCustomImage(album?.artworkUrl100)
+            thumbImage.loadImage(album?.artworkUrl100)
             albumLabel.text = album?.name
             artistLabel.text = album?.artistName
         }
