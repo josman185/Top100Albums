@@ -87,7 +87,7 @@ class AlbumDetail: UIView {
     }
     
     func set(detail: Album?) {
-        albumImage.setCustomImage(detail?.artworkUrl100)
+        albumImage.loadImage(detail?.artworkUrl100)
         copyrightLabel.text = detail?.copyright
         albumLabel.text = detail?.name
         artistLabel.text = detail?.artistName

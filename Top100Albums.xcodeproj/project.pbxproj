@@ -131,8 +131,8 @@
 			children = (
 				9C520ABB242300BE0028E645 /* Constants */,
 				9C54D783241C20950022907B /* Model */,
-				9C54D78D241C2C460022907B /* View */,
-				9C54D78A241C2B890022907B /* Controller */,
+				9C54D78D241C2C460022907B /* Custom Views */,
+				9C54D78A241C2B890022907B /* Controllers */,
 				9C54D787241C21160022907B /* Networking */,
 				9C54D790241C315B0022907B /* Extensions */,
 				9C54D753241C1B590022907B /* AppDelegate.swift */,
@@ -178,23 +178,23 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		9C54D78A241C2B890022907B /* Controller */ = {
+		9C54D78A241C2B890022907B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				9C54D78B241C2BD30022907B /* AlbumsTableViewController.swift */,
 				9C4C04DA24205E0D004904B0 /* AlbumDetailViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		9C54D78D241C2C460022907B /* View */ = {
+		9C54D78D241C2C460022907B /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				9C54D78E241C2EE10022907B /* AlbumCell.swift */,
 				9C4CA599241DA7540011B8DD /* AlbumDetail.swift */,
 				9C54D793241D28FB0022907B /* ActivityIndicator.swift */,
 			);
-			path = View;
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		9C54D790241C315B0022907B /* Extensions */ = {
