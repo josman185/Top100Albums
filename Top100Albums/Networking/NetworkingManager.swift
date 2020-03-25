@@ -45,7 +45,7 @@ class NetworkingManager: NSObject {
     }
     
     public func fetchAlbums(result: @escaping (Result<[Album], APIServiceError>) -> Void) {
-        let stringURL = UrlConstants.iTunesURL
+        let stringURL = UrlConstants.fetchAlbums(count: 20)
         guard let url = URL(string: stringURL) else { return }
         fetchResources(url: url, completion: result)
     }

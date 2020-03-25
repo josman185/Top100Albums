@@ -14,11 +14,11 @@ class AlbumCell: UITableViewCell {
     var albumLabel = UILabel()
     var artistLabel = UILabel()
     var thumbImage = UIImageView()
-    var album: Album? {
+    var albumViewModel: AlbumViewModel? {
         didSet {
-            thumbImage.loadImage(album?.artworkUrl100)
-            albumLabel.text = album?.name
-            artistLabel.text = album?.artistName
+            thumbImage.loadImage(albumViewModel?.artworkUrl100)
+            albumLabel.text = albumViewModel?.name
+            artistLabel.text = albumViewModel?.artistName
         }
     }
     

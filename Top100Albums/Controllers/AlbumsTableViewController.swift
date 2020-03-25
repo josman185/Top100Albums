@@ -16,7 +16,7 @@ class AlbumsTableViewController: UIViewController {
     
     // MARK: - Properties
     var albumsTableView = UITableView()
-    var albums: [Album] = []
+    var albumViewModels: [AlbumViewModel] = []
     
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class AlbumsTableViewController: UIViewController {
         NetworkingManager.shared.fetchAlbums { (result: Result<[Album], NetworkingManager.APIServiceError>) in
             switch result {
             case .success(let feed):
-                self.albums = feed
+                self.albumViewModels = feed.map({ return AlbumViewModel(album: $0) })
                 DispatchQueue.main.async {
                     self.albumsTableView.reloadData()
                     CustomActivityIndicator.stop()
@@ -58,9 +58,9 @@ class AlbumsTableViewController: UIViewController {
         }
     }
     
-    func showAlbumDetailView(_ album: Album) {
+    func showAlbumDetailView(_ album: AlbumViewModel) {
         let detailVC = AlbumDetailViewController()
-        detailVC.album = album
+        detailVC.albumViewModel = album
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
@@ -69,17 +69,18 @@ class AlbumsTableViewController: UIViewController {
 extension AlbumsTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        albums.count
+        albumViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsConstants.albumCell) as? AlbumCell else { return UITableViewCell() }
-        cell.album = albums[indexPath.row]
+        let albumViewModel = albumViewModels[indexPath.row]
+        cell.albumViewModel = albumViewModel
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let album = self.albums[indexPath.row]
+        let album = self.albumViewModels[indexPath.row]
         showAlbumDetailView(album)
     }
 }

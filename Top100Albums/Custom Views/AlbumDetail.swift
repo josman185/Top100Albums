@@ -86,7 +86,7 @@ class AlbumDetail: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(detail: Album?) {
+    func set(detail: AlbumViewModel?) {
         albumImage.loadImage(detail?.artworkUrl100)
         copyrightLabel.text = detail?.copyright
         albumLabel.text = detail?.name

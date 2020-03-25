@@ -12,7 +12,7 @@ class AlbumDetailViewController: UIViewController {
 
     // MARK: - Properties
     var detailView: AlbumDetail? { return view as? AlbumDetail }
-    var album: Album?
+    var albumViewModel: AlbumViewModel?
     
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
@@ -23,9 +23,9 @@ class AlbumDetailViewController: UIViewController {
     
     // MARK: - SetDetailData
     func setAlbumDetail() {
-        self.title = album?.artistName
+        self.title = albumViewModel?.artistName
         self.view = AlbumDetail(frame: UIScreen.main.bounds)
-        detailView?.set(detail: album)
+        detailView?.set(detail: albumViewModel)
     }
     
     // MARK: - Actions
@@ -34,7 +34,7 @@ class AlbumDetailViewController: UIViewController {
             self.showAlert(title: "We Apologize", message: "Use a device to enjoy all features.", style: .cancel)
         #else
             detailView?.iTunesButtonAction = { [weak self] in
-                guard let albumUrl = self?.album?.url else { return }
+                guard let albumUrl = self?.albumViewModel?.url else { return }
                 if let url = URL(string: albumUrl) {
                     UIApplication.shared.open(url)
                 }
