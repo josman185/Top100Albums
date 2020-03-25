@@ -17,9 +17,7 @@ class NetworkingManager: NSObject {
     
     public enum APIServiceError: Error {
         case apiError
-        case invalidEndpoint
         case invalidResponse
-        case noData
         case decodeError
     }
     
